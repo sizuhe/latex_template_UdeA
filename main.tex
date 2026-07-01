@@ -1,0 +1,70 @@
+\documentclass[12pt,letterpaper]{article}
+\input{sections/[0.0]-Config}
+
+
+
+
+
+% ==================================================
+% Información del documento
+% ==================================================
+\titleinfo{Título y/o subtítulo del trabajo de grado}
+\titleshort{Título del trabajo de grado ...}       % Reemplaza con las primeras palabras de tu título o palabras significativas del mismo, seguido de puntos suspensivos. No permitas que título y número de página pasen a una segunda línea o más. Si no es tan extenso escriba el título completo en el campo anterior sin puntos suspensivos
+
+ % No omitir ningún nombre o apellido; no abreviar ni dejar solo iniciales.
+ % En caso de que desee agregar mas autores los debe agregar de forma manual en la linea 23 del archivo '[0.1]-Portada.tex'.
+\authorone{Nombre del autor 1}
+\authortwo{Nombre del autor 2}
+
+\worktype{(tipo de trabajo)}
+\degree{(título otorgado por la UdeA)}
+
+\advisortype{(Tipo de orientador)}
+\advisor{(nombre del orientador)}
+\advisordegree{(título académico mas alto)}
+
+\faculty{(facultad, escuela, instituto o corporación UdeA)}
+\program{(pregrado o posgrado UdeA)}
+\city{(ciudad UdeA)}
+\gradyear{(año de grado)}        % Determina con tu asesor cuál es el año para registrar: año de entrega del documento o año en que se recibe el título académico.
+
+\rectorName{Nombres y Apellidos}
+\deanName{Nombres y Apellidos}
+\departmentHead{Nombres y Apellidos}
+
+%% Opcionales
+\cohort{(cohorte posgrado en numero romano)}
+\researchGroup{(Grupo de investigación UdeA (A-Z))}
+\researchCenter{(Centro de investigación UdeA (A-Z))}
+\libraryName{(Biblioteca, CRAI o centro de documentación UdeA (A-Z))}
+
+
+% ==================================================
+
+
+\begin{document}
+
+
+% Paginas iniciales requeridas
+\include{sections/[0.1]-Portada}
+\include{sections/[0.2]-Dedicatoria}        % Opcional. Modificar en el archivo respectivo
+\include{sections/[0.3]-ToC}
+\include{sections/[0.4]-Nomenclatura}
+
+% Añada sus paginas a continuacion o modifique los archivos existentes
+\include{sections/[1]-Resumen}          % Secciones: Resumen y Abstract
+\include{sections/[2]-Introduccion}
+\include{sections/[3]-Planteamiento}    % Secciones: Planteamiento y Justificación
+\include{sections/[4]-Objetivos}
+\include{sections/[5]-ProblemaInvestigacion}        % Secciones: Problema e Hipótesis
+\include{sections/[6]-MarcoTeorico}
+\include{sections/[7]-Metodologia}
+\include{sections/[8]-Resultados}
+\include{sections/[9]-Discusion}       % Secciones: Discusión, Conclusiones y Recomendaciones
+
+% Paginas finales
+\include{sections/[a]-Referencias}
+\include{sections/[b]-Anexos}
+
+
+\end{document}

@@ -1,0 +1,102 @@
+% ==================================================
+% %%%%% ESTE ARCHIVO NO DEBE SER EDITADO %%%%%
+% ==================================================
+
+
+
+% ==================================================
+% PORTADA
+% Se define el layout de la portada y pagina legal
+% ==================================================
+
+\pagestyle{empty}
+
+
+\begin{center}
+    \includegraphics[scale=0.72]{imgs/escudo_udea.png}
+    \vspace{2cm}
+    
+    \textbf{\tituloLargo}
+    \vspace{2cm}
+    
+    \autorUno\\
+    \autorDos
+    \vspace{2cm}
+    
+    \tipoTrabajo\ para optar al título de \tituloOtorgado
+    \vspace{2cm}
+    
+    \tipoOrientador\\
+    \nombreOrientador, \gradoOrientador
+    \vspace{1cm}
+    
+    Universidad de Antioquia\\
+    \facultad\\
+    \programa\\
+    \ciudad\\
+    \anoGrado
+    
+    \newpage
+    
+    
+    % ==================================================
+    % CITA
+    % ==================================================
+    
+    {\arrayrulecolor{verdeUdeA}
+        \footnotesize\begin{tabular}{cm{10cm}}
+        \noalign{\color{verdeUdeA}\hrule height 3pt}
+        
+        \textbf{Cita} & \hspace{2cm} Muñoz Zapata y Martínez Naranjo, 2018 [1]\\\hline
+        
+        \parbox[c][1.6\height]{5cm}{
+            \centerline{\textbf{Referencia}}
+            \vspace*{0.5cm}
+            \centerline{Estilo IEEE (2020)}
+        }
+        & \hspace{-0.5cm}
+        [1] Muñoz Zapata, L., y Martínez Naranjo, J. A.
+        ``\tituloLargo.'',
+        \programa,
+        Universidad de Antioquia,
+        \ciudad,
+        \anoGrado.\\
+        
+        \noalign{\color{verdeUdeA}\hrule height 3pt}
+        \end{tabular}
+    }
+    \arrayrulecolor{black}
+\end{center}
+\vspace{-1.1cm}
+
+
+{
+    \setlength{\parindent}{0pt}
+    
+    \includegraphics{imgs/CC.jpg}\quad
+    \includegraphics{imgs/CCima.png}
+    \vspace{1cm}
+
+    \programa, Cohorte \cohorte.\\
+    Grupo de Investigación \grupoInvestigacion.\\
+    \centroInvestigacion.
+    \vspace{1cm}
+
+    \includegraphics[scale=0.35]{imgs/escudo_udea_vice.png}\quad
+    \includegraphics{imgs/sis_biblo.png}\\
+    \biblioteca
+    \vspace{1cm}
+    
+    \textbf{Repositorio Institucional:} http://bibliotecadigital.udea.edu.co
+    \vspace{1cm}
+
+    Universidad de Antioquia -- www.udea.edu.co
+    \vspace{0.5cm}
+    
+    \textbf{Rector:} \rector.\\
+    \textbf{Decano/Director:} \decano.\\
+    \textbf{Jefe de departamento:} \jefeDepartamento.\\
+    \vspace{0.5cm}
+    
+    El contenido de esta obra corresponde al derecho de expresión de los autores y no compromete el pensamiento institucional de la Universidad de Antioquia ni desata su responsabilidad frente a terceros. Los autores asumen la responsabilidad por los derechos de autor y conexos.
+}

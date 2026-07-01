@@ -1,0 +1,181 @@
+% ==================================================
+% %%%%% ESTE ARCHIVO NO DEBE SER EDITADO %%%%%
+% ==================================================
+
+
+
+% ==================================================
+% METADATA
+% Los siguientes comandos guardan información usada a lo largo del documento
+% ==================================================
+
+% Definición de comandos
+\def\tituloLargo{}
+\def\tituloCorto{}
+
+\def\autorUno{}
+\def\autorDos{}
+
+\def\tipoTrabajo{}
+\def\tituloOtorgado{}
+
+\def\tipoOrientador{}
+\def\nombreOrientador{}
+\def\gradoOrientador{}
+
+\def\facultad{}
+\def\programa{}
+\def\ciudad{}
+\def\anoGrado{}
+
+\def\rector{}
+\def\decano{}
+\def\jefeDepartamento{}
+
+%% Opcionales
+\def\cohorte{}
+\def\grupoInvestigacion{}
+\def\centroInvestigacion{}
+\def\biblioteca{}
+
+
+
+% Creación de comandos
+\newcommand{\titleinfo}[1]{\gdef\tituloLargo{#1}}
+\newcommand{\titleshort}[1]{\gdef\tituloCorto{#1}}
+
+\newcommand{\authorone}[1]{\gdef\autorUno{#1}}
+\newcommand{\authortwo}[1]{\gdef\autorDos{#1}}
+
+\newcommand{\worktype}[1]{\gdef\tipoTrabajo{#1}}
+\newcommand{\degree}[1]{\gdef\tituloOtorgado{#1}}
+
+\newcommand{\advisortype}[1]{\gdef\tipoOrientador{#1}}
+\newcommand{\advisor}[1]{\gdef\nombreOrientador{#1}}
+\newcommand{\advisordegree}[1]{\gdef\gradoOrientador{#1}}
+
+\newcommand{\faculty}[1]{\gdef\facultad{#1}}
+\newcommand{\program}[1]{\gdef\programa{#1}}
+\newcommand{\city}[1]{\gdef\ciudad{#1}}
+\newcommand{\gradyear}[1]{\gdef\anoGrado{#1}}
+
+\newcommand{\rectorName}[1]{\gdef\rector{#1}}
+\newcommand{\deanName}[1]{\gdef\decano{#1}}
+\newcommand{\departmentHead}[1]{\gdef\jefeDepartamento{#1}}
+
+%% Opcionales
+\newcommand{\cohort}[1]{\gdef\cohorte{#1}}
+\newcommand{\researchGroup}[1]{\gdef\grupoInvestigacion{#1}}
+\newcommand{\researchCenter}[1]{\gdef\centroInvestigacion{#1}}
+\newcommand{\libraryName}[1]{\gdef\biblioteca{#1}}
+
+%% Adicionales
+\newcommand{\palabrasClave}[1]{{\bfseries{\itshape Palabras clave} --- #1}}
+\newcommand{\keywords}[1]{{\bfseries{\itshape Keywords} --- #1}}
+
+
+
+
+
+% ==================================================
+% CONFIGURACIÓN
+% Cargan de paquetes necesarios y configuración
+% ==================================================
+
+\usepackage[top=2.5cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{longtable}
+\usepackage{verbatim}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{enumitem}
+
+
+\usepackage{caption}
+\DeclareCaptionTextFormat{up}{\MakeUppercase{#1}}
+\captionsetup[table]{labelformat={default}, font=footnotesize, justification=centering, labelsep=newline, name={TABLA }, textformat=up} %-----formato del caption table
+\renewcommand{\thetable}{\Roman{table}}
+\captionsetup[figure]{labelformat={default}, font=footnotesize, labelsep=period,  name={Fig. }, justification=centering,singlelinecheck=false} %-----formato del caption figure
+\renewcommand{\thefigure}{\arabic{figure}}
+
+
+\usepackage[numbers]{natbib}
+\setlength{\parindent}{1.25cm}          % Sangria
+\renewcommand{\baselinestretch}{1.5}    % Interlineado
+\setlength{\parskip}{0.1em}             % Espacio entre parrafos
+\bibliographystyle{ieeeudea}
+
+\renewcommand{\labelitemi}{$\bullet $}
+\setlist[itemize]{leftmargin=*, parsep=-5px}
+\renewcommand\descriptionlabel[1]{$\bullet$\hspace{0.5em} \textbf{#1}}
+\setlist[description]{parsep=-5px}
+
+
+\usepackage{titletoc}
+% \titlecontents{section}[0.1em]{\smallskip}{\enspace\thecontentslabel.\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+% \titlecontents{subsection}[0.1em]{\smallskip}{\hspace{0.5cm}\enspace\thecontentslabel.\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+% \titlecontents{subsubsection}[0.1em]{\smallskip}{\hspace{1cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+% \titlecontents{paragraph}[0.1em]{\smallskip}{\hspace{1.5cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{section}
+  [0pt]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel.}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsection}
+  [1.5em]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel.}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsubsection}
+  [3.5em]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel)}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{paragraph}
+  [5.0em]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel)}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{4}     % Define el contador para los 4 niveles de titulo
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}   
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\alph{paragraph}}
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\centering\normalfont\normalsize\MakeUppercase}{\thesection.}{0.2em}{}
+\titleformat{\subsection}{\normalfont\normalsize\it}{\thesubsection.}{0.2em}{}
+\titleformat{\subsubsection}[runin]{\itshape\normalsize\it}{\hspace{0.5cm}\thesubsubsection)}{0.2em}{}
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\it}{\hspace{1cm}\theparagraph)}{0.2em}{}
+%\titleformat{\subparagraph}[runin]{\itshape\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+
+\usepackage{fancyhdr}
+\definecolor{verdeUdeA}{rgb}{0.325,0.506,0.208}     % RGB=83,129,53
+\setlength{\headheight}{25pt}
+\renewcommand{\headrule}{{\color{verdeUdeA}\rule{\textwidth}{1pt}}}
+\renewcommand{\headrulewidth}{2pt}
+\lhead{\footnotesize\MakeUppercase{\tituloCorto }}\chead{}\rhead{{\color{white}Rufino}\thepage}     % Borrar los encabezados
+\cfoot{}
+
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor=blue, urlcolor=blue, citecolor={red}}
+
+
+% LOT, LOF configuration
+\makeatletter
+\renewcommand\numberline[1]{#1\hspace{1em}}
+\renewcommand{\thefigure}{Fig.~\arabic{figure}}
+\renewcommand{\thetable}{Tabla~\Roman{table}}
+\makeatother
