@@ -1,0 +1,23 @@
+% ==================================================
+% %%%%% ESTE ARCHIVO NO DEBE SER EDITADO %%%%%
+% ==================================================
+
+
+
+\pagestyle{empty}
+
+\renewcommand{\contentsname}{\titleTOC}
+\renewcommand{\listtablename}{\titleLOT}
+\renewcommand{\listfigurename}{\titleLOF}
+
+
+\pdfbookmark[1]{\titleTOC}{tablacontenido}
+\tableofcontents
+
+\newpage
+\pdfbookmark[1]{\titleLOT}{listatablas}
+\listoftables
+
+\newpage
+\pdfbookmark[1]{\titleLOF}{listafiguras}
+\listoffigures 

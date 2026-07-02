@@ -19,11 +19,11 @@
     \textbf{\tituloLargo}
     \vspace{2cm}
     
-    \autorUno\\
-    \autorDos
+    \autorUnoNombre\ \autorUnoApellido\\
+    \autorDosNombre\ \autorDosApellido
     \vspace{2cm}
     
-    \tipoTrabajo\ para optar al título de \tituloOtorgado
+    \tipoTrabajo\ \textForDegree\ \tituloOtorgado
     \vspace{2cm}
     
     \tipoOrientador\\
@@ -39,6 +39,7 @@
     \newpage
     
     
+    
     % ==================================================
     % CITA
     % ==================================================
@@ -47,10 +48,10 @@
         \footnotesize\begin{tabular}{cm{10cm}}
         \noalign{\color{verdeUdeA}\hrule height 3pt}
         
-        \textbf{Cita} & \hspace{2cm} Muñoz Zapata y Martínez Naranjo, 2018 [1]\\\hline
+        \textbf{\textCiteTop} & \hspace{2cm} \autorUnoApellido, \anoGrado\ [1]\\\hline
         
         \parbox[c][1.6\height]{5cm}{
-            \centerline{\textbf{Referencia}}
+            \centerline{\textbf{\textCiteDown}}
             \vspace*{0.5cm}
             \centerline{Estilo IEEE (2020)}
         }
@@ -77,9 +78,10 @@
     \includegraphics{imgs/CCima.png}
     \vspace{1cm}
 
-    \programa, Cohorte \cohorte.\\
-    Grupo de Investigación \grupoInvestigacion.\\
-    \centroInvestigacion.
+    \programa\\
+    % \programa, Cohorte \cohorte.\\
+    % Grupo de Investigación \grupoInvestigacion.\\
+    % \centroInvestigacion.
     \vspace{1cm}
 
     \includegraphics[scale=0.35]{imgs/escudo_udea_vice.png}\quad
