@@ -1,0 +1,80 @@
+% ==================================================
+% %%%%% ESTE ARCHIVO NO DEBE SER EDITADO %%%%%
+% ==================================================
+
+
+
+\newcommand{\setLanguage}[1]{\def\thesislanguage{#1}}
+
+% ==================================================
+% METADATA
+% ==================================================
+
+% Definición de comandos
+\def\tituloLargo{}
+\def\tituloCorto{}
+
+\def\autorUno{}
+\def\autorDos{}
+
+\def\tipoTrabajo{}
+\def\tituloOtorgado{}
+
+\def\tipoOrientador{}
+\def\nombreOrientador{}
+\def\gradoOrientador{}
+
+\def\facultad{}
+\def\programa{}
+\def\ciudad{}
+\def\anoGrado{}
+
+\def\rector{}
+\def\decano{}
+\def\jefeDepartamento{}
+
+\def\idioma{}
+
+%% Opcionales
+\def\cohorte{}
+\def\grupoInvestigacion{}
+\def\centroInvestigacion{}
+\def\biblioteca{}
+
+\def\biblioteca{}
+
+
+
+% Creación de comandos
+\newcommand{\titleinfo}[1]{\gdef\tituloLargo{#1}}
+\newcommand{\titleshort}[1]{\gdef\tituloCorto{#1}}
+
+\newcommand{\authorone}[2]{\gdef\autorUnoNombre{#1}\gdef\autorUnoApellido{#2}}
+\newcommand{\authortwo}[2]{\gdef\autorDosNombre{#1}\gdef\autorDosApellido{#2}}
+
+\newcommand{\worktype}[1]{\gdef\tipoTrabajo{#1}}
+\newcommand{\degree}[1]{\gdef\tituloOtorgado{#1}}
+
+\newcommand{\advisortype}[1]{\gdef\tipoOrientador{#1}}
+\newcommand{\advisor}[1]{\gdef\nombreOrientador{#1}}
+\newcommand{\advisordegree}[1]{\gdef\gradoOrientador{#1}}
+
+\newcommand{\faculty}[1]{\gdef\facultad{#1}}
+\newcommand{\program}[1]{\gdef\programa{#1}}
+\newcommand{\city}[1]{\gdef\ciudad{#1}}
+\newcommand{\gradyear}[1]{\gdef\anoGrado{#1}}
+
+\newcommand{\rectorName}[1]{\gdef\rector{#1}}
+\newcommand{\deanName}[1]{\gdef\decano{#1}}
+\newcommand{\departmentHead}[1]{\gdef\jefeDepartamento{#1}}
+
+
+%% Opcionales
+\newcommand{\cohort}[1]{\gdef\cohorte{#1}}
+\newcommand{\researchGroup}[1]{\gdef\grupoInvestigacion{#1}}
+\newcommand{\researchCenter}[1]{\gdef\centroInvestigacion{#1}}
+\newcommand{\libraryName}[1]{\gdef\biblioteca{#1}}
+
+%% Adicionales
+\newcommand{\palabrasClave}[1]{{\bfseries{\itshape Palabras clave} --- #1}}
+\newcommand{\keywords}[1]{{\bfseries{\itshape Keywords} --- #1}}
