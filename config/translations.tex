@@ -1,0 +1,56 @@
+% ==================================================
+% %%%%% ESTE ARCHIVO NO DEBE SER EDITADO %%%%%
+% ==================================================
+
+
+
+% ==================================================
+% TRADUCCIONES
+% Automatización de titulos
+% ==================================================
+
+\ifdefstring{\thesislanguage}{spanish}
+{
+    \usepackage[spanish]{babel}
+    
+    \newcommand{\titleIntroduction}{\MakeUppercase{Introducción}}
+    \newcommand{\titleTheoretical}{\MakeUppercase{Marco Teórico}}
+    \newcommand{\titleMethodology}{\MakeUppercase{Metodología}}
+    \newcommand{\titleResults}{\MakeUppercase{Resultados}}
+    \newcommand{\titleDiscussion}{\MakeUppercase{Discusión}}
+    \newcommand{\titleConclusion}{\MakeUppercase{Conclusiones}}
+    \newcommand{\titleRecomendations}{\MakeUppercase{Recomendaciones}}
+    \newcommand{\titleReferences}{\MakeUppercase{Referencias}}
+    \newcommand{\titleTOC}{\MakeUppercase{Tabla de contenido}}
+    \newcommand{\titleLOT}{\MakeUppercase{Lista de tablas}}
+    \newcommand{\titleLOF}{\MakeUppercase{Lista de figuras}}
+    \newcommand{\titleNomenclature}{Siglas, acrónimos y abreviaturas}
+    \newcommand{\textForDegree}{para optar al título de}
+    \newcommand{\textCiteTop}{Cita}
+    \newcommand{\textCiteDown}{Referencia}
+    
+    \newcommand{\textTable}{Tabla}
+    \addto\captionsspanish{\renewcommand{\tablename}{\MakeUppercase{\textTable}}}
+}
+{
+    \usepackage[english]{babel}
+    
+    \newcommand{\titleIntroduction}{\MakeUppercase{Introduction}}
+    \newcommand{\titleTheoretical}{\MakeUppercase{Theoretical Framework}}
+    \newcommand{\titleMethodology}{\MakeUppercase{Methodology}}
+    \newcommand{\titleResults}{\MakeUppercase{Results}}
+    \newcommand{\titleDiscussion}{\MakeUppercase{Discussion}}
+    \newcommand{\titleConclusion}{\MakeUppercase{Conclusion}}
+    \newcommand{\titleRecomendations}{\MakeUppercase{Recomendations}}
+    \newcommand{\titleReferences}{\MakeUppercase{References}}
+    \newcommand{\titleTOC}{\MakeUppercase{Table of contents}}
+    \newcommand{\titleLOT}{\MakeUppercase{List of tables}}
+    \newcommand{\titleLOF}{\MakeUppercase{List of figures}}
+    \newcommand{\titleNomenclature}{Acronyms and Abbreviations}
+    \newcommand{\textForDegree}{to obtain the title of}
+    \newcommand{\textCiteTop}{Cite}
+    \newcommand{\textCiteDown}{Reference}
+    
+    \newcommand{\textTable}{Table}
+    \addto\captionsenglish{\renewcommand{\tablename}{\MakeUppercase{\textTable}}}
+}

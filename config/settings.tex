@@ -1,0 +1,127 @@
+% ==================================================
+% %%%%% ESTE ARCHIVO NO DEBE SER EDITADO %%%%%
+% ==================================================
+
+
+
+% ==================================================
+% CONFIGURACIÓN
+% ==================================================
+
+\usepackage[top=2.5cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{longtable}
+\usepackage{verbatim}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{etoolbox}
+
+
+
+\usepackage{caption}
+\newcommand{\textFigure}{Fig.}
+\DeclareCaptionTextFormat{up}{\MakeUppercase{#1}}
+\captionsetup[table]{labelformat={default}, font=footnotesize, justification=centering, labelsep=newline, textformat=up}
+\renewcommand{\thetable}{\Roman{table}}
+\captionsetup[figure]{labelformat={default}, font=footnotesize, labelsep=period, justification=centering,singlelinecheck=false, name={\textFigure}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+
+
+\usepackage[numbers]{natbib}
+\setlength{\parindent}{1.25cm}          % Sangria
+\renewcommand{\baselinestretch}{1.5}    % Interlineado
+\setlength{\parskip}{0.1em}             % Espacio entre parrafos
+\bibliographystyle{ieeeudea}
+
+\renewcommand{\labelitemi}{$\bullet $}
+\setlist[itemize]{leftmargin=*, parsep=-5px}
+\renewcommand\descriptionlabel[1]{$\bullet$\hspace{0.5em} \textbf{#1}}
+\setlist[description]{parsep=-5px}
+
+
+
+\usepackage{titletoc}
+\titlecontents{section}
+  [0pt]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel.}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsection}
+  [1.5em]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel.}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsubsection}
+  [3.5em]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel)}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{paragraph}
+  [5.0em]
+  {\smallskip}
+  {\makebox[2.5em][l]{\thecontentslabel)}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{4}     % Define el contador para los 4 niveles de titulo
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}   
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\alph{paragraph}}
+
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\centering\normalfont\normalsize\MakeUppercase}{\thesection.}{0.2em}{}
+\titleformat{\subsection}{\normalfont\normalsize\it}{\thesubsection.}{0.2em}{}
+\titleformat{\subsubsection}[runin]{\itshape\normalsize\it}{\hspace{0.5cm}\thesubsubsection)}{0.2em}{}
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\it}{\hspace{1cm}\theparagraph)}{0.2em}{}
+%\titleformat{\subparagraph}[runin]{\itshape\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+
+
+\usepackage{fancyhdr}
+\definecolor{verdeUdeA}{rgb}{0.325,0.506,0.208}     % RGB=83,129,53
+\setlength{\headheight}{25pt}
+\renewcommand{\headrule}{{\color{verdeUdeA}\rule{\textwidth}{1pt}}}
+\renewcommand{\headrulewidth}{2pt}
+\lhead{\footnotesize\MakeUppercase{\tituloCorto }}\chead{}\rhead{{\color{white}Rufino}\thepage}     % Borrar los encabezados
+\cfoot{}
+
+
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor=blue, urlcolor=blue, citecolor={red}}
+
+
+
+% LOT, LOF configuration
+\makeatletter
+\let\oldl@table\l@table
+\renewcommand*\l@table[2]{%
+  \begingroup
+  \renewcommand{\numberline}[1]{\textTable~##1\hspace{1em}}%
+  \oldl@table{#1}{#2}%
+  \endgroup
+}
+\makeatother
+
+\makeatletter
+\let\oldl@figure\l@figure
+\renewcommand*\l@figure[2]{%
+  \begingroup
+  \renewcommand{\numberline}[1]{\textFigure~##1\hspace{1em}}%
+  \oldl@figure{#1}{#2}%
+  \endgroup
+}
+\makeatother
