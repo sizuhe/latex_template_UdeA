@@ -10,7 +10,7 @@
 
 \usepackage[top=2.5cm, bottom=3cm, left=3cm, right=3cm]{geometry}
 \usepackage[table]{xcolor}
-\usepackage{graphicx,amsmath,amssymb,array,enumitem,lipsum,float,etoolbox,xstring,booktabs}
+\usepackage{graphicx,amsmath,amssymb,array,enumitem,lipsum,float,etoolbox,xstring}
 
 
 
@@ -41,7 +41,7 @@
 \titlecontents{section}
   [0pt]
   {\smallskip}
-  {\makebox[2.5em][l]{\thecontentslabel.}}
+  {\makebox[2.5em][l]{\hspace{4pt}\thecontentslabel.}}
   {}
   {\titlerule*[1pc]{.}\contentspage}
 \titlecontents{subsection}
@@ -56,18 +56,12 @@
   {\makebox[2.5em][l]{\thecontentslabel)}}
   {}
   {\titlerule*[1pc]{.}\contentspage}
-\titlecontents{paragraph}
-  [5.0em]
-  {\smallskip}
-  {\makebox[2.5em][l]{\thecontentslabel)}}
-  {}
-  {\titlerule*[1pc]{.}\contentspage}
 
-\setcounter{tocdepth}{5}
+\setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{4}     % Define el contador para los 4 niveles de titulo
 
 \renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{\Alph{subsection}}   
+\renewcommand{\thesubsection}{\Alph{subsection}}
 \renewcommand{\thesubsubsection}{\arabic{subsubsection}}
 \renewcommand{\theparagraph}{\alph{paragraph}}
 
@@ -77,8 +71,6 @@
 \titleformat{\section}{\centering\normalfont\normalsize\MakeUppercase}{\thesection.}{0.2em}{}
 \titleformat{\subsection}{\normalfont\normalsize\it}{\thesubsection.}{0.2em}{}
 \titleformat{\subsubsection}[runin]{\itshape\normalsize\it}{\hspace{0.5cm}\thesubsubsection)}{0.2em}{}[:]
-\titleformat{\paragraph}[runin]{\normalfont\normalsize\it}{\hspace{1cm}\theparagraph)}{0.2em}{}
-%\titleformat{\subparagraph}[runin]{\itshape\normalsize\bfseries}{\thesubparagraph}{1em}{}
 
 
 
@@ -87,13 +79,19 @@
 \setlength{\headheight}{25pt}
 \renewcommand{\headrule}{{\color{verdeUdeA}\rule{\textwidth}{1pt}}}
 \renewcommand{\headrulewidth}{2pt}
-\lhead{\footnotesize\MakeUppercase{\tituloCorto }}\chead{}\rhead{{\color{white}Rufino}\thepage}     % Borrar los encabezados
+\lhead{\footnotesize\MakeUppercase{\tituloCorto}}\chead{}\rhead{{\color{white}Rufino}\thepage}
 \cfoot{}
 
 
 
 \usepackage{hyperref}
-\hypersetup{colorlinks, linkcolor=blue, urlcolor=blue, citecolor={red}}
+% \hypersetup{colorlinks, linkcolor=blue, urlcolor=blue, citecolor={red}}       % Color links
+\hypersetup{hidelinks}          % Black links
+
+
+
+\usepackage{booktabs}
+\setlength{\tabcolsep}{8pt}         % Horizontal padding
 
 
 
@@ -117,3 +115,26 @@
   \endgroup
 }
 \makeatother
+
+
+
+% Bookmarks setup
+\newcommand{\tocuppercase}[1]{
+  \texorpdfstring{\MakeUppercase{#1}}{#1}
+}
+\let\oldsection\section
+\RenewDocumentCommand{\section}{s o m}{
+  \IfBooleanTF{#1}
+    {% \section*
+      \oldsection*{#3}%
+    }
+    {% \section
+      \IfNoValueTF{#2}
+        {\oldsection[\tocuppercase{#3}]{#3}}
+        {\oldsection[#2]{#3}}
+    }
+}
+\newcommand{\sectionCustom}[1]{
+  \section*{#1}
+  \addcontentsline{toc}{section}{\tocuppercase{#1}}
+}
