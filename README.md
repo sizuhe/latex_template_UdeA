@@ -2,11 +2,13 @@
 Esta plantilla es una reorganización de la plantilla publicada en la Biblioteca Digital de la Universidad de Antioquia. Conserva el estilo y formato de la versión original, pero introduce cambios significativos en la estructura y organización de los archivos. Además, incorpora nuevas funcionalidades y corrige diversos errores presentes en la versión anterior.
 
 > [!IMPORTANT]
-> Aunque esta plantilla mantiene el mismo estilo y formato de la vieja plantilla, NO representa una actualización oficial de la misma. 
-> - **Plantilla original**: [https://bibliotecadigital.udea.edu.co/entities/publication/3863d3c0-9716-446b-98ef-7c84e428a54c](https://bibliotecadigital.udea.edu.co/entities/publication/3863d3c0-9716-446b-98ef-7c84e428a54c)
+> Aunque esta plantilla mantiene el mismo estilo y formato de la vieja plantilla, NO representa una actualización oficial de la misma.
 
 
 ## Cambios
+> [!IMPORTANT]
+> **Ultima actualización: 30/07/2026**
+
 - Se corrigen errores relacionados con los paquetes y la clase del documento presentes en la plantilla original.
 - Se solucionan los problemas de la tabla de contenido cuando el documento contiene un gran número de títulos.
 - Se corrigen errores de compilación.
@@ -42,3 +44,9 @@ El resto de archivos que no se mencionen a continuación no deben ser modificado
 ## Recomendaciones
 - Agregar las imagenes a la carpeta `imgs` y referenciarlas en el documento con la ruta relativa. Igualmente, se recomienda agregar los nuevos archivos .tex a la carpeta `sections` y referenciarlos en el documento principal con la ruta relativa.
 - Agregar archivos con nombres secuenciales como [1]-Archivo1, [2]-Archivo2, etc. a la carpeta `sections` y referenciarlos en el documento principal con la ruta relativa.
+
+
+## Atribución y licencia
+Este proyecto es una adaptación de la **Plantilla (LaTeX) IEEE** del Sistema de Bibliotecas de la Universidad de Antioquia, disponible en [https://hdl.handle.net/10495/26245](https://hdl.handle.net/10495/26245).
+
+**Adaptación y mantenimiento**: Simón Zuluaga Henao (@sizuhe).
