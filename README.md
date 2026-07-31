@@ -2,7 +2,7 @@
 Esta plantilla es una reorganización de la plantilla publicada en la Biblioteca Digital de la Universidad de Antioquia. Conserva el estilo y formato de la versión original, pero introduce cambios significativos en la estructura y organización de los archivos. Además, incorpora nuevas funcionalidades y corrige diversos errores presentes en la versión anterior.
 
 > [!IMPORTANT]
-> Aunque esta plantilla mantiene el mismo estilo y formato de la vieja plantilla, NO representa una actualización oficial de la misma.
+> Aunque esta plantilla mantiene el mismo estilo y formato de la vieja plantilla, **NO representa una actualización oficial de la misma**.
 
 
 ## Cambios
