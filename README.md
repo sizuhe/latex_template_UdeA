@@ -3,7 +3,7 @@ Esta plantilla es una reorganización de la plantilla publicada en la Biblioteca
 
 > [!IMPORTANT]
 > Aunque esta plantilla mantiene el mismo estilo y formato de la vieja plantilla, NO representa una actualización oficial de la misma. 
-> - **Plantilla original**: [https://bibliotecadigital.udea.edu.co/handle/10495/10599](https://bibliotecadigital.udea.edu.co/handle/10495/10599)
+> - **Plantilla original**: [https://bibliotecadigital.udea.edu.co/entities/publication/3863d3c0-9716-446b-98ef-7c84e428a54c](https://bibliotecadigital.udea.edu.co/entities/publication/3863d3c0-9716-446b-98ef-7c84e428a54c)
 
 
 ## Cambios
@@ -14,6 +14,8 @@ Esta plantilla es una reorganización de la plantilla publicada en la Biblioteca
 - Se agrega la capacidad de traducir los textos predeterminados de la plantilla al idioma inglés.
 - Se simplifica el texto guía.
 - Automatización de diferentes textos de la plantilla según la información del archivo `metadata.tex`.
+- Se actualizan los marcadores (bookmarks) del `.pdf` para ser presentados en minúscula.
+- Se actualizan los logos de la Universidad de Antioquia a la versión más reciente y con mejor calidad.
 
 
 ## Instrucciones de uso
