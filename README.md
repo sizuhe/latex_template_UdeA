@@ -21,14 +21,12 @@ Esta plantilla es una reorganización de la plantilla publicada en la Biblioteca
 
 
 ## Instrucciones de uso
-En el archivo `main.tex` se encuentra la estructura principal del documento y algunas variables que deben ser definidas por el usuario, como el título de la tesis, el nombre del autor, el programa académico, entre otros.
-
 1. Descargar la plantilla desde el repositorio de GitHub.
-2. Para usarla en Overleaf, suba el archivo descargado .zip a su proyecto de Overleaf y descomprímalo.
+2. **Overleaf**: Subir el archivo `.zip` descargado a su proyecto de Overleaf y descomprímir.
 3. Editar los archivos de la plantilla según sea necesario para su tesis.
 
 ### Archivos modificables
-El resto de archivos que no se mencionen a continuación no deben ser modificados, ya que son archivos de configuración y estilo de la plantilla. Los archivos modificables son:
+Los archivos que **no** se mencionen a continuación **no** deben ser modificados, ya que son archivos de configuración y estilo de la plantilla. Los archivos modificables son:
 - `config/metadata.tex`: contiene información de la tesis, como el título, autor, programa académico, entre otros. Esta información se utiliza para generar automáticamente la portada, la página legal y otros textos del documento. Desde aqui se puede seleccionar el idioma del documento (español o inglés).
 - `frontmatter/[2]-Dedicatoria.tex`: contiene el texto de la dedicatoria y agradecimientos.
 - `frontmatter/[4]-Nomenclatura.tex`: contiene la lista de abreviaturas y símbolos utilizados en el documento.
