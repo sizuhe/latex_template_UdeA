@@ -7,16 +7,16 @@ Esta plantilla es una reorganización de la plantilla publicada en la Biblioteca
 
 ## Cambios
 > [!IMPORTANT]
-> **Ultima actualización: 30/07/2026**
+> **Última actualización: 07/10/2026**
 
-- Se corrigen errores relacionados con los paquetes y la clase del documento presentes en la plantilla original.
+- Soporte para varios autores y orientadores: repita `\thesisauthor{Nombre}{Apellido}` o `\thesisadvisor{Tipo}{Nombre}{Grado}` en `metadata.tex` y aparecerán automáticamente.
+- Se corrigen errores de paquetes, clase del documento, y de compilación presentes en la plantilla original.
 - Se solucionan los problemas de la tabla de contenido cuando el documento contiene un gran número de títulos.
-- Se corrigen errores de compilación.
 - Se simplifica la estructura de archivos y se eliminan archivos innecesarios.
-- Se agrega la capacidad de traducir los textos predeterminados de la plantilla al idioma inglés.
+- Se agrega la capacidad de traducir los títulos de sección de la plantilla al idioma inglés.
 - Se simplifica el texto guía.
 - Automatización de diferentes textos de la plantilla según la información del archivo `metadata.tex`.
-- Se actualizan los marcadores (bookmarks) del `.pdf` para ser presentados en minúscula.
+- Se actualizan los marcadores (bookmarks) del `.pdf` y se resuelven errores.
 - Se actualizan los logos de la Universidad de Antioquia a la versión más reciente y con mejor calidad.
 
 

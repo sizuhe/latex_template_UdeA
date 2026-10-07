@@ -6,6 +6,7 @@
 % del Sistema de Bibliotecas de la Universidad de Antioquia.
 %
 % Distribuido bajo la licencia CC BY-NC-SA 4.0.
+% Modificado (2026): metadatos reescritos con expl3 (propiedad + listas).
 % ------------------------------------------------------------------------------
 
 % ==================================================
@@ -14,77 +15,136 @@
 
 
 
-\newcommand{\setLanguage}[1]{\def\thesislanguage{#1}}
+\ExplSyntaxOn
 
 % ==================================================
-% METADATA
+% ALMACENAMIENTO
 % ==================================================
 
-% Definición de comandos
-\def\tituloLargo{}
-\def\tituloCorto{}
+\prop_new:N \g_thesis_prop          % campos simples: clave -> valor
+\seq_new:N  \g_thesis_authors_seq   % elementos: {nombre}{apellido}
+\seq_new:N  \g_thesis_advisors_seq  % elementos: {tipo}{nombre}{grado}
 
-\def\autorUno{}
-\def\autorDos{}
+% ==================================================
+% CAMPOS SIMPLES
+% \comando{valor} guarda el valor bajo la clave indicada
+% ==================================================
 
-\def\tipoTrabajo{}
-\def\tituloOtorgado{}
+\cs_new_protected:Npn \thesis_field:Nn #1#2
+  { \NewDocumentCommand #1 {m} { \prop_gput:Nnn \g_thesis_prop {#2} {##1} } }
 
-\def\tipoOrientador{}
-\def\nombreOrientador{}
-\def\gradoOrientador{}
+\thesis_field:Nn \setLanguage    {language}
 
-\def\facultad{}
-\def\programa{}
-\def\ciudad{}
-\def\anoGrado{}
+\thesis_field:Nn \titleinfo      {title}
+\thesis_field:Nn \titleshort     {title-short}
+\thesis_field:Nn \worktype       {work-type}
+\thesis_field:Nn \degree         {degree}
 
-\def\rector{}
-\def\decano{}
-\def\jefeDepartamento{}
+\thesis_field:Nn \faculty        {faculty}
+\thesis_field:Nn \program        {program}
+\thesis_field:Nn \city           {city}
+\thesis_field:Nn \gradyear       {year}
 
-\def\idioma{}
-
-%% Opcionales
-\def\cohorte{}
-\def\grupoInvestigacion{}
-\def\centroInvestigacion{}
-\def\biblioteca{}
-
-\def\biblioteca{}
-
-
-
-% Creación de comandos
-\newcommand{\titleinfo}[1]{\gdef\tituloLargo{#1}}
-\newcommand{\titleshort}[1]{\gdef\tituloCorto{#1}}
-
-\newcommand{\authorone}[2]{\gdef\autorUnoNombre{#1}\gdef\autorUnoApellido{#2}}
-\newcommand{\authortwo}[2]{\gdef\autorDosNombre{#1}\gdef\autorDosApellido{#2}}
-
-\newcommand{\worktype}[1]{\gdef\tipoTrabajo{#1}}
-\newcommand{\degree}[1]{\gdef\tituloOtorgado{#1}}
-
-\newcommand{\advisortype}[1]{\gdef\tipoOrientador{#1}}
-\newcommand{\advisor}[1]{\gdef\nombreOrientador{#1}}
-\newcommand{\advisordegree}[1]{\gdef\gradoOrientador{#1}}
-
-\newcommand{\faculty}[1]{\gdef\facultad{#1}}
-\newcommand{\program}[1]{\gdef\programa{#1}}
-\newcommand{\city}[1]{\gdef\ciudad{#1}}
-\newcommand{\gradyear}[1]{\gdef\anoGrado{#1}}
-
-\newcommand{\rectorName}[1]{\gdef\rector{#1}}
-\newcommand{\deanName}[1]{\gdef\decano{#1}}
-\newcommand{\departmentHead}[1]{\gdef\jefeDepartamento{#1}}
-
+\thesis_field:Nn \rectorName     {rector}
+\thesis_field:Nn \deanName       {dean}
+\thesis_field:Nn \departmentHead {department-head}
 
 %% Opcionales
-\newcommand{\cohort}[1]{\gdef\cohorte{#1}}
-\newcommand{\researchGroup}[1]{\gdef\grupoInvestigacion{#1}}
-\newcommand{\researchCenter}[1]{\gdef\centroInvestigacion{#1}}
-\newcommand{\libraryName}[1]{\gdef\biblioteca{#1}}
+\thesis_field:Nn \cohort         {cohort}
+\thesis_field:Nn \researchGroup  {research-group}
+\thesis_field:Nn \researchCenter {research-center}
+\thesis_field:Nn \libraryName    {library}
 
-%% Adicionales
-\newcommand{\palabrasClave}[1]{{\bfseries{\itshape Palabras clave} --- #1}}
-\newcommand{\keywords}[1]{{\bfseries{\itshape Keywords} --- #1}}
+% Lectura de un campo: \thesis{title}, \thesis{city}, ...
+\NewExpandableDocumentCommand \thesis {m}
+  { \prop_item:Nn \g_thesis_prop {#1} }
+
+% Condicional de idioma: \IfThesisLanguage{spanish}{si}{no}
+\NewDocumentCommand \IfThesisLanguage {m +m +m}
+  { \str_if_eq:eeTF { \prop_item:Nn \g_thesis_prop {language} } {#1} {#2} {#3} }
+
+% ==================================================
+% AUTORES Y ORIENTADORES (cualquier cantidad)
+% ==================================================
+
+\NewDocumentCommand \thesisauthor {mm}
+  { \seq_gput_right:Nn \g_thesis_authors_seq {{#1}{#2}} }
+
+\NewDocumentCommand \thesisadvisor {mmm}
+  { \seq_gput_right:Nn \g_thesis_advisors_seq {{#1}{#2}{#3}} }
+
+% Formato de cada entrada (modificar aquí si se requiere otro formato)
+\cs_new:Npn \__thesis_author:nn   #1#2   { #1~#2 }
+\cs_new:Npn \__thesis_advisor:nnn #1#2#3 { #1 \\ #2,~#3 }
+
+% \thesisauthors[separador]   (separador por defecto: \par)
+\NewDocumentCommand \thesisauthors { O{\par} }
+  {
+    \seq_set_map:NNn \l_tmpa_seq \g_thesis_authors_seq { \__thesis_author:nn ##1 }
+    \seq_use:Nn \l_tmpa_seq {#1}
+  }
+
+% \thesisadvisors[separador]  (separador por defecto: \par\medskip)
+\NewDocumentCommand \thesisadvisors { O{\par\medskip} }
+  {
+    \seq_set_map:NNn \l_tmpa_seq \g_thesis_advisors_seq { \__thesis_advisor:nnn ##1 }
+    \seq_use:Nn \l_tmpa_seq {#1}
+  }
+
+% ==================================================
+% CITA (formato IEEE para la página legal)
+% ==================================================
+
+\seq_new:N \l__thesis_names_seq
+\seq_new:N \l__thesis_initials_seq
+\tl_new:N  \l__thesis_first_tl
+
+% " y " / " and " según el idioma (los espacios van dentro de cada rama)
+\cs_new:Npn \__thesis_and:
+  { \str_if_eq:eeTF { \prop_item:Nn \g_thesis_prop {language} } {spanish} {~y~} {~and~} }
+\cs_new:Npn \__thesis_last_sep:
+  { \str_if_eq:eeTF { \prop_item:Nn \g_thesis_prop {language} } {spanish} {~y~} {,~and~} }
+
+% Primera letra de una palabra (funciona con tildes: Á, É, Ñ...)
+\cs_new_protected:Npn \__thesis_first_char:n #1
+  { \text_map_inline:nn {#1} { ##1 \text_map_break: } }
+
+\cs_new_protected:Npn \__thesis_initials:n #1
+  {
+    \seq_set_split:Nnn \l__thesis_names_seq { ~ } {#1}
+    \seq_set_map:NNn \l__thesis_initials_seq \l__thesis_names_seq
+      { \__thesis_first_char:n {##1} . }
+    \seq_use:Nn \l__thesis_initials_seq { ~ }
+  }
+
+% {nombre}{apellido} -> "Apellido, N."
+\cs_new_protected:Npn \__thesis_author_cite:nn #1#2
+  { #2,~\__thesis_initials:n {#1} }
+
+% Lista de autores para la referencia.
+\NewDocumentCommand \thesisauthorscite {}
+  {
+    \seq_set_map:NNn \l_tmpa_seq \g_thesis_authors_seq { \__thesis_author_cite:nn ##1 }
+    \seq_use:Nnnn \l_tmpa_seq { \__thesis_and: } { ,~ } { \__thesis_last_sep: }
+  }
+
+% Apellido(s) para la cita corta.
+\NewDocumentCommand \thesisauthorshort {}
+  {
+    \seq_if_empty:NF \g_thesis_authors_seq
+      {
+        \seq_get_left:NN \g_thesis_authors_seq \l__thesis_first_tl
+        \exp_last_unbraced:NV \use_ii:nn \l__thesis_first_tl
+        \int_compare:nNnT { \seq_count:N \g_thesis_authors_seq } > { 1 }
+            { ~et~al. }
+      }
+  }
+
+\ExplSyntaxOff
+
+% ==================================================
+% ADICIONALES
+% ==================================================
+
+\newcommand{\palabrasClave}[1]{{\null\noindent\bfseries{\itshape Palabras clave} --- #1}}
+\newcommand{\keywords}[1]{{\null\noindent\bfseries{\itshape Keywords} --- #1}}

@@ -17,25 +17,23 @@
     \includegraphics[scale=0.075]{imgs/config/udea_horizontal.png}
     \vspace{2cm}
 
-    \textbf{\tituloLargo}
+    \textbf{\thesis{title}}
     \vspace{2cm}
 
-    \autorUnoNombre\ \autorUnoApellido\\
-    \autorDosNombre\ \autorDosApellido
-    \vspace{2cm}
+    \thesisauthors[\\]
+    \vspace{\fill}
 
-    \tipoTrabajo\ \textForDegree\ \tituloOtorgado
-    \vspace{2cm}
+    \thesis{work-type}\ \textForDegree\ \thesis{degree}
+    \vspace{\fill}
 
-    \tipoOrientador\\
-    \nombreOrientador, \gradoOrientador
+    \thesisadvisors
     \vspace{1cm}
 
     Universidad de Antioquia\\
-    \facultad\\
-    \programa\\
-    \ciudad\\
-    \anoGrado
+    \thesis{faculty}\\
+    \thesis{program}\\
+    \thesis{city}\\
+    \thesis{year}
 
     \newpage
 
@@ -49,20 +47,20 @@
         \footnotesize\begin{tabular}{cm{9.4cm}}
         \noalign{\color{verdeUdeA}\hrule height 3pt}
 
-        \textbf{\textCiteTop} & \hspace{2cm} \autorUnoApellido, \anoGrado\ [1]\\\hline
+        \textbf{\textCiteTop} & \hspace{2cm} \thesisauthorshort, \thesis{year}\ [1]\\\hline
 
         \parbox[c][1.6\height]{5cm}{
             \centerline{\textbf{\textCiteDown}}
             \vspace*{0.5cm}
-            \centerline{Estilo IEEE (2020)}
+            \centerline{IEEE (2020)}
         }
         & \hspace{-0.5cm}
-        [1] \autorUnoApellido, \StrLeft{\autorUnoNombre}{1}.
-        ``\tituloLargo.'',
-        \programa,
+        [1] \thesisauthorscite,
+        ``\thesis{title}.'',
+        \thesis{program},
         Universidad de Antioquia,
-        \ciudad,
-        \anoGrado.\\
+        \thesis{city},
+        \thesis{year}.\\
 
         \noalign{\color{verdeUdeA}\hrule height 3pt}
         \end{tabular}
@@ -79,16 +77,16 @@
     \includegraphics{imgs/config/cc_imagen.png}
     \vspace{1cm}
 
-    \programa\\
-    % \programa, Cohorte \cohorte.\\
-    % Grupo de Investigación \grupoInvestigacion.\\
-    % \centroInvestigacion.
-    \vspace{1cm}
+    % \thesis{program}\\
+    % \thesis{program}, Cohorte \thesis{cohort}.\\
+    % Grupo de Investigación \thesis{research-group}.\\
+    % \thesis{research-center}.
+    % \vspace{1cm}
 
     \includegraphics[scale=0.14]{imgs/config/udea_vice.png}\quad
     \includegraphics{imgs/config/sis_biblo.png}\\
-    \biblioteca
-    \vspace{1cm}
+    % \thesis{library}
+    \vspace{\fill}
 
     \textbf{Repositorio Institucional:} http://bibliotecadigital.udea.edu.co
     \vspace{1cm}
@@ -96,9 +94,9 @@
     Universidad de Antioquia -- www.udea.edu.co
     \vspace{0.5cm}
 
-    \textbf{Rector:} \rector.\\
-    \textbf{Decano/Director:} \decano.\\
-    \textbf{Jefe de departamento:} \jefeDepartamento.\\
+    \textbf{Rector:} \thesis{rector}.\\
+    \textbf{Decano/Director:} \thesis{dean}.\\
+    \textbf{Jefe de departamento:} \thesis{department-head}.\\
     \vspace{0.5cm}
 
     El contenido de esta obra corresponde al derecho de expresión de los autores y no compromete el pensamiento institucional de la Universidad de Antioquia ni desata su responsabilidad frente a terceros. Los autores asumen la responsabilidad por los derechos de autor y conexos.
